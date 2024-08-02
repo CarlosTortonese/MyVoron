@@ -1,0 +1,214 @@
+{
+    "auxiliary_fan": "0",
+    "bed_custom_model": "",
+    "bed_custom_texture": "",
+    "bed_exclude_area": [
+        "0x0"
+    ],
+    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
+    "best_object_pos": "0.5,0.5",
+    "change_extrusion_role_gcode": "",
+    "change_filament_gcode": "",
+    "cooling_tube_length": "5",
+    "cooling_tube_retraction": "91.5",
+    "default_filament_profile": [
+        "My Generic ABS"
+    ],
+    "default_print_profile": "0.20mm Standard @MyKlipper",
+    "deretraction_speed": [
+        "30"
+    ],
+    "enable_filament_ramming": "1",
+    "extra_loading_move": "-2",
+    "extruder_clearance_height_to_lid": "140",
+    "extruder_clearance_height_to_rod": "36",
+    "extruder_clearance_radius": "65",
+    "extruder_colour": [
+        "#FCE94F"
+    ],
+    "extruder_offset": [
+        "0x0"
+    ],
+    "fan_kickstart": "0",
+    "fan_speedup_overhangs": "1",
+    "fan_speedup_time": "0",
+    "from": "",
+    "gcode_flavor": "klipper",
+    "high_current_on_filament_swap": "0",
+    "host_type": "octoprint",
+    "inherits": "MyKlipper 0.4 nozzle",
+    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
+    "machine_end_gcode": ";\n; end_gcode\nG92 E0                          ; zero the extruded length\nG1 E-5 F9000                    ; retract\nM104 S0                         ; turn off temperature\nM140 S0                         ; turn off bed\nG91                             ; relative positioning\nG1 E-1 F300                     ; retract the filament a bit before lifting the nozzle, to release some of the pressure\nG1 Z+20 E-5 X-20 Y-20 F7200     ; move Z up a bit and retract filament even more\nM107                            ; turn off layer fan\nM84                             ; disable motors\nG90                             ; absolute positioning\n;\n;EOF",
+    "machine_load_filament_time": "0",
+    "machine_max_acceleration_e": [
+        "1000",
+        "5000"
+    ],
+    "machine_max_acceleration_extruding": [
+        "600",
+        "20000"
+    ],
+    "machine_max_acceleration_retracting": [
+        "400",
+        "5000"
+    ],
+    "machine_max_acceleration_travel": [
+        "20000",
+        "20000"
+    ],
+    "machine_max_acceleration_x": [
+        "500",
+        "20000"
+    ],
+    "machine_max_acceleration_y": [
+        "500",
+        "20000"
+    ],
+    "machine_max_acceleration_z": [
+        "200",
+        "200"
+    ],
+    "machine_max_jerk_e": [
+        "4",
+        "2.5"
+    ],
+    "machine_max_jerk_x": [
+        "6",
+        "9"
+    ],
+    "machine_max_jerk_y": [
+        "6",
+        "9"
+    ],
+    "machine_max_jerk_z": [
+        "0.4",
+        "0.4"
+    ],
+    "machine_max_speed_e": [
+        "60",
+        "25"
+    ],
+    "machine_max_speed_x": [
+        "200",
+        "200"
+    ],
+    "machine_max_speed_y": [
+        "200",
+        "200"
+    ],
+    "machine_max_speed_z": [
+        "10",
+        "12"
+    ],
+    "machine_min_extruding_rate": [
+        "0",
+        "0"
+    ],
+    "machine_min_travel_rate": [
+        "0",
+        "0"
+    ],
+    "machine_pause_gcode": "PAUSE",
+    "machine_start_gcode": "; start_gcode\nM117 Start Clean        ; Indicate nozzle clean in progress on LCD\n;\nm140 s[first_layer_bed_temperature] ; bed temp warm\nm109 s[first_layer_temperature] ; nozzle temp and wait\nm190 s[first_layer_bed_temperature] ; bed temp and wait\n;\nM107                    ; Turn layer fan off\nG21                     ; Set to metric change to G20 if you want Imperial\nG90                     ; Force coordinates to be absolute relative to the origin\nG28                     ; Home X/Y/Z axis\n;\nG1 X3 Y1 Z15 F9000      ; Move safe Z height to shear strings\nG0 X1 Y1 Z0.2 F9000     ; Move in 1mm from edge and up z 0.2mm\nG92 E0                  ; Set extruder to 0 zero\nG1 X100 E12 F500        ; Extrude 30mm filiment along X axis 100mm long to prime and clean the nozzle\nG92 E0                  ; Reset extruder to 0 zero end of cleaning run\nG1 E-1 F500             ; Retract filiment by 1 mm to reduce string effect\nG1 X180 F4000           ; quick wipe away from the filament line / purge\nM117 End Clean          ; Indicate nozzle clean in progress on LCD\n;\nM117 Printing...\n; Begin printing with sliced GCode after here\n;",
+    "machine_unload_filament_time": "0",
+    "manual_filament_change": "0",
+    "max_layer_height": [
+        "0.32"
+    ],
+    "min_layer_height": [
+        "0.08"
+    ],
+    "name": "Tevo Tornado",
+    "nozzle_diameter": [
+        "0.4"
+    ],
+    "nozzle_hrc": "0",
+    "nozzle_type": "undefine",
+    "nozzle_volume": "0",
+    "parking_pos_retraction": "92",
+    "print_host": "192.168.5.6",
+    "print_host_webui": "",
+    "printable_area": [
+        "0x0",
+        "300x0",
+        "300x300",
+        "0x300"
+    ],
+    "printable_height": "400",
+    "printer_model": "Generic Klipper Printer",
+    "printer_notes": "",
+    "printer_settings_id": "Tevo Tornado",
+    "printer_structure": "undefine",
+    "printer_technology": "FFF",
+    "printer_variant": "0.4",
+    "printhost_apikey": "",
+    "printhost_authorization_type": "key",
+    "printhost_cafile": "",
+    "printhost_password": "",
+    "printhost_port": "",
+    "printhost_ssl_ignore_revoke": "0",
+    "printhost_user": "",
+    "purge_in_prime_tower": "1",
+    "retract_before_wipe": [
+        "70%"
+    ],
+    "retract_length_toolchange": [
+        "2"
+    ],
+    "retract_lift_above": [
+        "0"
+    ],
+    "retract_lift_below": [
+        "0"
+    ],
+    "retract_lift_enforce": [
+        "All Surfaces"
+    ],
+    "retract_restart_extra": [
+        "0"
+    ],
+    "retract_restart_extra_toolchange": [
+        "0"
+    ],
+    "retract_when_changing_layer": [
+        "1"
+    ],
+    "retraction_length": [
+        "5"
+    ],
+    "retraction_minimum_travel": [
+        "1"
+    ],
+    "retraction_speed": [
+        "30"
+    ],
+    "scan_first_layer": "0",
+    "silent_mode": "0",
+    "single_extruder_multi_material": "1",
+    "support_air_filtration": "1",
+    "support_chamber_temp_control": "1",
+    "template_custom_gcode": "",
+    "thumbnails": [
+        "300x300"
+    ],
+    "thumbnails_format": "PNG",
+    "time_cost": "0",
+    "time_lapse_gcode": "",
+    "upward_compatible_machine": [],
+    "use_firmware_retraction": "0",
+    "use_relative_e_distances": "1",
+    "version": "1.8.0.0",
+    "wipe": [
+        "1"
+    ],
+    "wipe_distance": [
+        "1"
+    ],
+    "z_hop": [
+        "0.4"
+    ],
+    "z_hop_types": [
+        "Normal Lift"
+    ],
+    "z_offset": "0"
+}
